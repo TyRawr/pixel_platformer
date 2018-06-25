@@ -1,0 +1,376 @@
+fileFormatVersion: 2
+guid: 75cd81ce0d3d2d54d8d9068135700cf0
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Female walking Cycle _0
+    21300002: Female walking Cycle _1
+    21300004: Female walking Cycle _2
+    21300006: Female walking Cycle _3
+    21300008: Female walking Cycle _4
+    21300010: Female walking Cycle _5
+    21300012: Female walking Cycle _6
+    21300014: Female walking Cycle _7
+    21300016: Female walking Cycle _8
+    21300018: Female walking Cycle _9
+    21300020: Female walking Cycle _10
+    21300022: Female walking Cycle _11
+    21300024: Female walking Cycle _12
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Female walking Cycle _0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 38
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.4151993, y: 30}
+        - {x: -8.8294525, y: 26.753029}
+        - {x: -10.894222, y: 20.585556}
+        - {x: -6.176674, y: 11.282532}
+        - {x: -13.958458, y: -7.5468025}
+        - {x: -7.9475937, y: -2.1305084}
+        - {x: -8.661926, y: -17.117348}
+        - {x: -14.749998, y: -30}
+        - {x: -1.4435196, y: -23.100193}
+        - {x: 13.75103, y: -30}
+        - {x: 8.375137, y: 4.88282}
+        - {x: 7.017708, y: 27.36184}
+      physicsShape:
+      - - {x: 4, y: 29}
+        - {x: -7.249998, y: 29.717648}
+        - {x: -13, y: 20}
+        - {x: -9, y: 10}
+        - {x: -15, y: -4}
+        - {x: -9, y: -7}
+        - {x: -8, y: -17}
+        - {x: -14.749998, y: -30}
+        - {x: -8, y: -29}
+        - {x: -2, y: -18}
+        - {x: 6, y: -29}
+        - {x: 12, y: -29}
+        - {x: 1, y: -6}
+        - {x: 9, y: -9}
+        - {x: 3, y: 7}
+        - {x: 10, y: 23}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96581a99596860e47a541aefe01e7091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 38
+        width: 39
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd09f600d4b6094d89052d6b26307cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 38
+        width: 30
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5ea2436c8e72a488cc853097281ed8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _3
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 38
+        width: 30
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70899dd9d8653445984a4b3ed4d8f08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _4
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 38
+        width: 30
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85a50067b6bdd849b8cf4d3b7705e74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _5
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 38
+        width: 30
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bbfe2829f719c54e939d9324addad02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _6
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 38
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa23cd033440c55458bcec92e6948279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _7
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 38
+        width: 37
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 485f102d6aaa4f743a13a293f566eef8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _8
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 38
+        width: 30
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ad2da7164b7c94d8ff6447ab59bb71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _9
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 38
+        width: 30
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e5a2ff34233b1409170e17044e6fa2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _10
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 38
+        width: 30
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce17f75f8ac694249b97ee908e6e4bd5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Female walking Cycle _11
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 38
+        width: 30
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b041c2e935110334794232903878180b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ba28502c058971c408d8895df4a66780
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
