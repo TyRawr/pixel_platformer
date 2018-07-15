@@ -283,8 +283,8 @@ namespace Gamekit2D
                 else
                     newLocalPosY = Mathf.MoveTowards(cameraFollowTarget.localPosition.y, desiredLocalPosY, m_CamFollowVerticalSpeed * Time.deltaTime);
             }
-
-            //cameraFollowTarget.localPosition = new Vector2(newLocalPosX, newLocalPosY);
+            Debug.Log("Follow");
+            cameraFollowTarget.localPosition = new Vector2(newLocalPosX, newLocalPosY);
         }
 
         protected IEnumerator Flicker()

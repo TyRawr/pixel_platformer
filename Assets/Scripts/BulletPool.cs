@@ -52,6 +52,7 @@ namespace Gamekit2D
             bullet = instance.GetComponent<Bullet>();
             bullet.bulletPoolObject = this;
             bullet.mainCamera = Object.FindObjectOfType<Camera> ();
+
             Debug.Log(bullet.mainCamera == null);
         }
 
