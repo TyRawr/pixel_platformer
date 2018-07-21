@@ -23,6 +23,7 @@ namespace Gamekit2D
         public SpriteRenderer spriteRenderer;
         public Damageable damageable;
         public Damager meleeDamager;
+        public Transform arm;
         public Transform facingLeftBulletSpawnPoint;
         public Transform facingRightBulletSpawnPoint;
         public BulletPool bulletPool;
@@ -127,7 +128,7 @@ namespace Gamekit2D
             m_Transform = transform;
             //m_InventoryController = GetComponent<InventoryController>();
 
-            m_CurrentBulletSpawnPoint = spriteOriginallyFacesLeft ? facingLeftBulletSpawnPoint : facingRightBulletSpawnPoint;
+            m_CurrentBulletSpawnPoint = facingRightBulletSpawnPoint;
         }
 
         void Start()
@@ -234,18 +235,7 @@ namespace Gamekit2D
         // Protected functions.
         protected void UpdateBulletSpawnPointPositions()
         {
-            if (rightBulletSpawnPointAnimated)
-            {
-                Vector2 leftPosition = facingRightBulletSpawnPoint.localPosition;
-                leftPosition.x *= -1f;
-                facingLeftBulletSpawnPoint.localPosition = leftPosition;
-            }
-            else
-            {
-                Vector2 rightPosition = facingLeftBulletSpawnPoint.localPosition;
-                rightPosition.x *= -1f;
-                facingRightBulletSpawnPoint.localPosition = rightPosition;
-            }
+            
             
         }
 
@@ -283,7 +273,6 @@ namespace Gamekit2D
                 else
                     newLocalPosY = Mathf.MoveTowards(cameraFollowTarget.localPosition.y, desiredLocalPosY, m_CamFollowVerticalSpeed * Time.deltaTime);
             }
-            Debug.Log("Follow");
             cameraFollowTarget.localPosition = new Vector2(newLocalPosX, newLocalPosY);
         }
 
@@ -335,9 +324,11 @@ namespace Gamekit2D
 
             
             BulletObject bullet = bulletPool.Pop(m_CurrentBulletSpawnPoint.position);
-            bool facingLeft = m_CurrentBulletSpawnPoint == facingLeftBulletSpawnPoint;
-            bullet.rigidbody2D.velocity = new Vector2(facingLeft ? -bulletSpeed : bulletSpeed, 0f);
-            bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
+            Debug.Log(arm.eulerAngles.z);
+            Vector2 v = new Vector2(Mathf.Cos(arm.eulerAngles.z * Mathf.Deg2Rad), Mathf.Sin(arm.eulerAngles.z * Mathf.Deg2Rad));
+            Debug.Log(v);
+            bullet.rigidbody2D.velocity = bulletSpeed * v;
+            //bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
 
             //rangedAttackAudioPlayer.PlayRandomSound();
             
@@ -399,17 +390,14 @@ namespace Gamekit2D
             
             bool faceLeft = PlayerInput.Instance.Horizontal.Value < 0f;
             bool faceRight = PlayerInput.Instance.Horizontal.Value > 0f;
-            Debug.Log("faceLeft " + faceLeft);
             if (faceLeft)
             {
                 spriteRenderer.flipX = !spriteOriginallyFacesLeft;
-                m_CurrentBulletSpawnPoint = facingLeftBulletSpawnPoint;
 
             }
             else if (faceRight)
             {
                 spriteRenderer.flipX = spriteOriginallyFacesLeft;
-                m_CurrentBulletSpawnPoint = facingRightBulletSpawnPoint;
             }
         }
 
@@ -418,12 +406,10 @@ namespace Gamekit2D
             if (faceLeft)
             {
                 spriteRenderer.flipX = !spriteOriginallyFacesLeft;
-                m_CurrentBulletSpawnPoint = facingLeftBulletSpawnPoint;
             }
             else
             {
                 spriteRenderer.flipX = spriteOriginallyFacesLeft;
-                m_CurrentBulletSpawnPoint = facingRightBulletSpawnPoint;
             }
         }
 
