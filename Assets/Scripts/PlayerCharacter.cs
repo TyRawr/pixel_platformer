@@ -294,10 +294,8 @@ namespace Gamekit2D
 
         protected IEnumerator Shoot()
         {
-            Debug.Log("Shoot");
             while (PlayerInput.Instance.RangedAttack.Held)
             {
-                Debug.Log("HELD");
                 if (Time.time >= m_NextShotTime)
                 {
                     SpawnBullet();

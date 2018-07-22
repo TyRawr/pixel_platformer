@@ -45,6 +45,7 @@ namespace Gamekit2D
                 bool onScreen = screenPoint.z > 0 && screenPoint.x > -k_OffScreenError &&
                                 screenPoint.x < 1 + k_OffScreenError && screenPoint.y > -k_OffScreenError &&
                                 screenPoint.y < 1 + k_OffScreenError;
+
                 if (!onScreen)
                     bulletPoolObject.ReturnToPool();
             }
@@ -61,11 +62,13 @@ namespace Gamekit2D
 
         public void OnHitDamageable(Damager origin, Damageable damageable)
         {
+            Debug.Log("OnHitDamageable");
             FindSurface(origin.LastHit);
         }
 
         public void OnHitNonDamageable(Damager origin)
         {
+            Debug.Log("OnHitNonDamageable");
             FindSurface(origin.LastHit);
         }
 
@@ -76,7 +79,7 @@ namespace Gamekit2D
 
             TileBase surfaceHit = PhysicsHelper.FindTileForOverride(collider, transform.position, forward);
 
-            VFXController.Instance.Trigger(VFX_HASH, transform.position, 0, m_SpriteRenderer.flipX, null, surfaceHit);
+            //VFXController.Instance.Trigger(VFX_HASH, transform.position, 0, m_SpriteRenderer.flipX, null, surfaceHit);
         }
     }
 }

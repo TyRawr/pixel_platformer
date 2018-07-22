@@ -15,7 +15,6 @@ public class Arm : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float armRotationX = Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
-        Debug.Log("armRotationX " + armRotationX);
         bool faceRight = armRotationX >= 0f;
         if (faceRight)
         {

@@ -64,6 +64,7 @@ namespace Gamekit2D
 
         public override void Sleep()
         {
+            Debug.Log("bullet insance sleep");
             instance.SetActive(false);
         }
     }

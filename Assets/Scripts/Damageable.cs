@@ -106,6 +106,7 @@ namespace Gamekit2D
 
             if (m_CurrentHealth <= 0)
             {
+                Debug.Log("Doied");
                 OnDie.Invoke(damager, this);
                 m_ResetHealthOnSceneReload = true;
                 EnableInvulnerability();
