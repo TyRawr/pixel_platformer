@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Arm : MonoBehaviour {
-
+    SpriteRenderer spriteRenderer;
 	// Use this for initialization
 	void Start () {
-		
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 	}
 
 
@@ -14,7 +14,17 @@ public class Arm : MonoBehaviour {
     private Vector2 worldMousePos;
 	// Update is called once per frame
 	void Update () {
- 
+        float armRotationX = Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad);
+        Debug.Log("armRotationX " + armRotationX);
+        bool faceRight = armRotationX >= 0f;
+        if (faceRight)
+        {
+            spriteRenderer.flipY = false;
+
+        } else
+        {
+            spriteRenderer.flipY = true;
+        }
     }
 
     private void FixedUpdate()
@@ -28,7 +38,6 @@ public class Arm : MonoBehaviour {
 
 
 
-        float f = Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad);
-        //Debug.Log(f);
+        
     }
 }

@@ -387,9 +387,11 @@ namespace Gamekit2D
 
         public void UpdateFacing()
         {
+            //comes [-1,1]->left,right
+            float armRotation = Mathf.Cos(arm.eulerAngles.z * Mathf.Deg2Rad);
             
-            bool faceLeft = PlayerInput.Instance.Horizontal.Value < 0f;
-            bool faceRight = PlayerInput.Instance.Horizontal.Value > 0f;
+            bool faceLeft = armRotation <= 0;
+            bool faceRight = !faceLeft;
             if (faceLeft)
             {
                 spriteRenderer.flipX = !spriteOriginallyFacesLeft;
