@@ -82,7 +82,7 @@ namespace Gamekit2D
             Vector2 pointB = pointA + scaledSize;
 
             int hitCount = Physics2D.OverlapArea(pointA, pointB, m_AttackContactFilter, m_AttackOverlapResults);
-
+            
             for (int i = 0; i < hitCount; i++)
             {
                 m_LastHit = m_AttackOverlapResults[i];
@@ -100,6 +100,7 @@ namespace Gamekit2D
                     OnNonDamageableHit.Invoke(this);
                 }
             }
+            
         }
     }
 }

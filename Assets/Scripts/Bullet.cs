@@ -34,6 +34,7 @@ namespace Gamekit2D
 
         public void ReturnToPool ()
         {
+            Debug.Log("return to pool");
             bulletPoolObject.ReturnToPool ();
         }
 

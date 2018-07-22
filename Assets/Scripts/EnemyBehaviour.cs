@@ -481,7 +481,7 @@ namespace Gamekit2D
             Vector2 damagerToThis = damager.transform.position - transform.position;
 
             throwVector.x = Mathf.Sign(damagerToThis.x) * -2.0f;
-            m_MoveVector = throwVector;
+            //m_MoveVector = throwVector;
 
             if (m_FlickeringCoroutine != null)
             {

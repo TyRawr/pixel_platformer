@@ -103,7 +103,7 @@ namespace Gamekit2D
             m_DamageDirection = transform.position + (Vector3)centreOffset - damager.transform.position;
 
             OnTakeDamage.Invoke(damager, this);
-
+            Debug.Log(damager.name);
             if (m_CurrentHealth <= 0)
             {
                 Debug.Log("Doied");

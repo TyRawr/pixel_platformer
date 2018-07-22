@@ -307,7 +307,6 @@ namespace Gamekit2D
 
         protected void SpawnBullet()
         {
-            Debug.Log("Spawn Bullet");
             //we check if there is a wall between the player and the bullet spawn position, if there is, we don't spawn a bullet
             //otherwise, the player can "shoot throught wall" because the arm extend to the other side of the wall
             Vector2 testPosition = transform.position;
@@ -322,14 +321,8 @@ namespace Gamekit2D
 
             
             BulletObject bullet = bulletPool.Pop(m_CurrentBulletSpawnPoint.position);
-            Debug.Log(arm.eulerAngles.z);
             Vector2 v = new Vector2(Mathf.Cos(arm.eulerAngles.z * Mathf.Deg2Rad), Mathf.Sin(arm.eulerAngles.z * Mathf.Deg2Rad));
-            Debug.Log(v);
             bullet.rigidbody2D.velocity = bulletSpeed * v;
-            //bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
-
-            //rangedAttackAudioPlayer.PlayRandomSound();
-            
         }
 
         // Public functions - called mostly by StateMachineBehaviours in the character's Animator Controller but also by Events.

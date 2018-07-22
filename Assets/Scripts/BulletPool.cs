@@ -52,8 +52,7 @@ namespace Gamekit2D
             bullet = instance.GetComponent<Bullet>();
             bullet.bulletPoolObject = this;
             bullet.mainCamera = Object.FindObjectOfType<Camera> ();
-
-            Debug.Log(bullet.mainCamera == null);
+            
         }
 
         public override void WakeUp(Vector2 position)
@@ -64,7 +63,6 @@ namespace Gamekit2D
 
         public override void Sleep()
         {
-            Debug.Log("bullet insance sleep");
             instance.SetActive(false);
         }
     }
