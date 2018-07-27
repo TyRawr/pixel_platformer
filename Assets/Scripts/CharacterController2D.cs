@@ -85,7 +85,7 @@ namespace Gamekit2D
         /// </summary>
         public void CheckCapsuleEndCollisions(bool bottom = true)
         {
-            //Debug.Log("Check caps");
+            Debug.Log("Check caps");
             Vector2 raycastDirection;
             Vector2 raycastStart;
             float raycastDistance;
@@ -116,7 +116,7 @@ namespace Gamekit2D
             {
                 raycastStart = m_Rigidbody2D.position + m_Capsule.offset;
                 raycastDistance = m_Capsule.size.x * 0.5f + groundedRaycastDistance * 2f;
-                //Debug.Log("Dist : " + raycastDistance);
+                Debug.Log("Dist : " + raycastDistance);
                 if (bottom)
                 {
                     raycastDirection = Vector2.down;

@@ -153,7 +153,7 @@ namespace Gamekit2D
                 return;
 
             m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, - gravity);
-
+            Debug.Log("Move " + m_MoveVector);
             m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
 
             m_CharacterController2D.CheckCapsuleEndCollisions();
@@ -232,6 +232,7 @@ namespace Gamekit2D
 
         public void ScanForPlayer()
         {
+            Debug.Log("ScanForPlayer");
             //If the player don't have control, they can't react, so do not pursue them
             if (!PlayerInput.Instance.HaveControl)
                 return;
@@ -326,7 +327,7 @@ namespace Gamekit2D
             if((m_Target.transform.position - transform.position).sqrMagnitude < (meleeRange * meleeRange))
             {
                 m_Animator.SetTrigger(m_HashMeleeAttackPara);
-                meleeAttackAudio.PlayRandomSound();
+                //meleeAttackAudio.PlayRandomSound();
             }
         }
 

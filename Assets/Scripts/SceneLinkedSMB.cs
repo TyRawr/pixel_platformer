@@ -30,7 +30,6 @@ namespace Gamekit2D
         public sealed override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex, AnimatorControllerPlayable controller)
         {
             m_FirstFrameHappened = false;
-
             OnSLStateEnter(animator, stateInfo, layerIndex);
             OnSLStateEnter (animator, stateInfo, layerIndex, controller);
         }

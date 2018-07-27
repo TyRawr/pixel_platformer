@@ -34,7 +34,6 @@ namespace Gamekit2D
 
         public void ReturnToPool ()
         {
-            Debug.Log("return to pool");
             bulletPoolObject.ReturnToPool ();
         }
 
@@ -63,13 +62,11 @@ namespace Gamekit2D
 
         public void OnHitDamageable(Damager origin, Damageable damageable)
         {
-            Debug.Log("OnHitDamageable");
             FindSurface(origin.LastHit);
         }
 
         public void OnHitNonDamageable(Damager origin)
         {
-            Debug.Log("OnHitNonDamageable");
             FindSurface(origin.LastHit);
         }
 
