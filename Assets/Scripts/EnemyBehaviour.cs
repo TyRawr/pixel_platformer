@@ -163,7 +163,7 @@ namespace Gamekit2D
             m_Animator.SetBool(m_HashGroundedPara, m_CharacterController2D.IsGrounded);
         }
 
-        void UpdateTimers()
+        public virtual void UpdateTimers()
         {
             if (m_TimeSinceLastTargetView > 0.0f)
                 m_TimeSinceLastTargetView -= Time.deltaTime;
@@ -177,7 +177,7 @@ namespace Gamekit2D
             m_MoveVector.x = horizontalSpeed * m_SpriteForward.x;
         }
 
-        public bool CheckForObstacle(float forwardDistance)
+        public virtual bool CheckForObstacle(float forwardDistance)
         {
             //we circle cast with a size sligly small than the collider height. That avoid to collide with very small bump on the ground
             if (Physics2D.CircleCast(m_Collider.bounds.center, m_Collider.bounds.extents.y - 0.2f, m_SpriteForward, forwardDistance, m_Filter.layerMask.value))
@@ -201,12 +201,12 @@ namespace Gamekit2D
             if (facing == -1)
             {
                 m_SpriteRenderer.flipX = !spriteFaceLeft;
-                m_SpriteForward = spriteFaceLeft ? Vector2.right : Vector2.left;
+                m_SpriteForward = Vector2.left;
             }
             else if (facing == 1)
             {
                 m_SpriteRenderer.flipX = spriteFaceLeft;
-                m_SpriteForward = spriteFaceLeft ? Vector2.left : Vector2.right;
+                m_SpriteForward = Vector2.right;
             }
         }
 
@@ -232,7 +232,7 @@ namespace Gamekit2D
 
         public void ScanForPlayer()
         {
-            Debug.Log("ScanForPlayer");
+            //Debug.Log("ScanForPlayer");
             //If the player don't have control, they can't react, so do not pursue them
             if (!PlayerInput.Instance.HaveControl)
                 return;
