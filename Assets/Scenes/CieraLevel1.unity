@@ -1225,6 +1225,10 @@ GameObject:
   - component: {fileID: 653646618}
   - component: {fileID: 653646617}
   - component: {fileID: 653646616}
+  - component: {fileID: 653646621}
+  - component: {fileID: 653646620}
+  - component: {fileID: 653646619}
+  - component: {fileID: 653646622}
   m_Layer: 0
   m_Name: Tan
   m_TagString: Untagged
@@ -1303,12 +1307,107 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 653646615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.04, y: 0.56, z: 0}
+  m_LocalPosition: {x: 5.88, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1187906056}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653646619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653646615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9630ef9434df4048aafe7bffcc5bc1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundedLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  groundedRaycastDistance: 0.01
+--- !u!50 &653646620
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653646615}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.4571609
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: c325d97ce27776645bad5015a39d864d, type: 2}
+  m_Interpolate: 2
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &653646621
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653646615}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6875, y: 0.8125}
+  m_Direction: 0
+--- !u!114 &653646622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653646615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49de84fa3d321d245bc900e599de015f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 653646617}
+  damageable: {fileID: 0}
+  meleeDamager: {fileID: 0}
+  arm: {fileID: 1187906056}
+  facingLeftBulletSpawnPoint: {fileID: 0}
+  facingRightBulletSpawnPoint: {fileID: 0}
+  bulletPool: {fileID: 0}
+  cameraFollowTarget: {fileID: 1187906056}
+  maxSpeed: 10
+  groundAcceleration: 100
+  groundDeceleration: 100
+  pushingSpeedProportion: 0
+  airborneAccelProportion: 0
+  airborneDecelProportion: 0
+  gravity: 50
+  jumpSpeed: 20
+  jumpAbortSpeedReduction: 100
+  hurtJumpAngle: 45
+  hurtJumpSpeed: 5
+  flickeringDuration: 0.1
+  meleeAttackDashSpeed: 5
+  dashWhileAirborne: 0
+  shotsPerSecond: 1
+  bulletSpeed: 5
+  holdingGunTimeoutDuration: 10
+  rightBulletSpawnPointAnimated: 1
+  cameraHorizontalFacingOffset: 0
+  cameraHorizontalSpeedOffset: 0
+  cameraVerticalInputOffset: 0
+  maxHorizontalDeltaDampTime: 0
+  maxVerticalDeltaDampTime: 0
+  verticalCameraOffsetDelay: 0
+  spriteOriginallyFacesLeft: 1
 --- !u!1 &677414439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1777,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4241864397061850, guid: d180fee84171b814dbb6378152af024e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 4.66
       objectReference: {fileID: 0}
     - target: {fileID: 4241864397061850, guid: d180fee84171b814dbb6378152af024e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2808,6 +2907,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1187906055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187906056}
+  m_Layer: 0
+  m_Name: arm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1187906056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1187906055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 653646618}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1192240826
 Prefab:
