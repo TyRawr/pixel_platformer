@@ -11,12 +11,13 @@ namespace Gamekit2D
             base.OnSLStateEnter(animator, stateInfo, layerIndex);
 
             m_MonoBehaviour.OrientToTarget();
+            m_MonoBehaviour.SetFacingData(1);
         }
 
         public override void OnSLStateNoTransitionUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnSLStateNoTransitionUpdate(animator, stateInfo, layerIndex);
-
+            m_MonoBehaviour.OrientToTarget();
             m_MonoBehaviour.CheckTargetStillVisible();
             m_MonoBehaviour.CheckMeleeAttack();
 

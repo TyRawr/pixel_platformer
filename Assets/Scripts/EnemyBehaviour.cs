@@ -101,6 +101,7 @@ namespace Gamekit2D
 
         private void Awake()
         {
+            Debug.LogWarning("EYE ON Awake");
             m_CharacterController2D = GetComponent<CharacterController2D>();
             m_Collider = GetComponent<Collider2D>();
             m_Animator = GetComponent<Animator>();
@@ -120,6 +121,7 @@ namespace Gamekit2D
 
         private void OnEnable()
         {
+            Debug.LogWarning("EYE ON ENABLED");
             if (meleeDamager != null)
                 EndAttack();
 
@@ -163,13 +165,23 @@ namespace Gamekit2D
             m_Animator.SetBool(m_HashGroundedPara, m_CharacterController2D.IsGrounded);
         }
 
-        public virtual void UpdateTimers()
+        public virtual void UpdateTimeSinceLastTargetViewTimer()
         {
             if (m_TimeSinceLastTargetView > 0.0f)
                 m_TimeSinceLastTargetView -= Time.deltaTime;
-
+        }
+        public virtual void UpdateFireTimer()
+        {
             if (m_FireTimer > 0.0f)
                 m_FireTimer -= Time.deltaTime;
+        }
+
+        public virtual void UpdateTimers()
+        {
+            UpdateTimeSinceLastTargetViewTimer();
+            UpdateFireTimer();
+
+
         }
 
         public void SetHorizontalSpeed(float horizontalSpeed)
@@ -230,7 +242,7 @@ namespace Gamekit2D
             }
         }
 
-        public void ScanForPlayer()
+        public virtual void ScanForPlayer()
         {
             //Debug.Log("ScanForPlayer");
             //If the player don't have control, they can't react, so do not pursue them
@@ -259,7 +271,7 @@ namespace Gamekit2D
             m_Animator.SetTrigger(m_HashSpottedPara);
         }
 
-        public void OrientToTarget()
+        public virtual void OrientToTarget()
         {
             if (m_Target == null)
                 return;
@@ -274,7 +286,7 @@ namespace Gamekit2D
 
         public void CheckTargetStillVisible()
         {
-            if (m_Target == null)
+             if (m_Target == null)
                 return;
 
             Vector3 toTarget = m_Target.position - transform.position;
@@ -490,7 +502,7 @@ namespace Gamekit2D
                 m_SpriteRenderer.color = m_OriginalColor;
             }
 
-            m_FlickeringCoroutine = StartCoroutine(Flicker(damageable));
+            m_FlickeringCoroutine = damageable.StartCoroutine(Flicker(damageable));
             CameraShaker.Shake(0.15f, 0.3f);
         }
 

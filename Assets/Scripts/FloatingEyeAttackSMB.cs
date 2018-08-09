@@ -10,7 +10,7 @@ namespace Gamekit2D
         {
             base.OnSLStateExit(animator, stateInfo, layerIndex);
 
-            m_MonoBehaviour.SetHorizontalSpeed(0);
+            //m_MonoBehaviour.SetHorizontalSpeed(0);
         }
     }
 }

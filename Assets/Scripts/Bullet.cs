@@ -30,6 +30,7 @@ namespace Gamekit2D
             m_SpriteRenderer = GetComponent<SpriteRenderer>();
             m_Timer = 0.0f;
             mainCamera = Object.FindObjectOfType<Camera>();
+            Debug.Log("spriteOriginallyFacesLeft " + spriteOriginallyFacesLeft);
         }
 
         public void ReturnToPool ()

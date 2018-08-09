@@ -40,8 +40,10 @@ GameObject:
   - component: {fileID: 58274413793135410}
   - component: {fileID: 114415664640662774}
   - component: {fileID: 114202550005955382}
-  - component: {fileID: 114810075590331060}
   - component: {fileID: 95120767120548018}
+  - component: {fileID: 70755720811403960}
+  - component: {fileID: 61257755778931504}
+  - component: {fileID: 114749585595591388}
   m_Layer: 13
   m_Name: Floating Eye Small
   m_TagString: Untagged
@@ -69,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813891354677432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.34, y: -1.38, z: 0}
+  m_LocalPosition: {x: -0.2, y: 4.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4002566756310216}
@@ -95,7 +97,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &58274413793135410
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -111,6 +113,46 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.28
+--- !u!61 &61257755778931504
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813891354677432}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
+--- !u!70 &70755720811403960
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813891354677432}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 0.5}
+  m_Direction: 0
 --- !u!95 &95120767120548018
 Animator:
   serializedVersion: 3
@@ -142,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundedLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 25088
   groundedRaycastDistance: 0.1
 --- !u!114 &114415664640662774
 MonoBehaviour:
@@ -168,7 +210,7 @@ MonoBehaviour:
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114810075590331060}
+      - m_Target: {fileID: 114749585595591388}
         m_MethodName: Hit
         m_Mode: 0
         m_Arguments:
@@ -206,8 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  offset: {x: 0, y: 0}
-  size: {x: 0.58, y: 0.58}
+  offset: {x: -0.39, y: 0.24}
+  size: {x: 0.58, y: 0.57}
   offsetBasedOnSpriteFacing: 1
   spriteRenderer: {fileID: 0}
   canHitTriggers: 0
@@ -227,7 +269,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Gamekit2D.Damager+NonDamagableEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114810075590331060
+--- !u!114 &114749585595591388
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,23 +277,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1813891354677432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d264e196f472d4aa7a238b5cec1f93, type: 3}
+  m_Script: {fileID: 11500000, guid: 607f38cee5cf31b42b8774f6fd75e3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteFaceLeft: 1
-  speed: 1
-  gravity: 10
+  speed: 2
+  gravity: 0
   projectilePrefab: {fileID: 0}
   viewDirection: 0
-  viewFov: 300
-  viewDistance: 6
-  timeBeforeTargetLost: 2
-  meleeRange: 0.93
-  meleeDamager: {fileID: 114594438214170042}
-  contactDamager: {fileID: 114594438214170042}
+  viewFov: 148
+  viewDistance: 6.14
+  timeBeforeTargetLost: 3
+  meleeRange: 3
+  meleeDamager: {fileID: 0}
+  contactDamager: {fileID: 0}
   attackDash: 0
-  attackForce: {x: 1, y: 1}
-  shootingOrigin: {fileID: 0}
+  attackForce: {x: 0, y: 0}
+  shootingOrigin: {fileID: 4190095287932176}
   shootAngle: 45
   shootForce: 100
   fireRate: 2
@@ -259,7 +301,7 @@ MonoBehaviour:
   meleeAttackAudio: {fileID: 0}
   dieAudio: {fileID: 0}
   footStepAudio: {fileID: 0}
-  flickeringDuration: 0.3
+  flickeringDuration: 1
 --- !u!212 &212533876213970740
 SpriteRenderer:
   m_ObjectHideFlags: 1
