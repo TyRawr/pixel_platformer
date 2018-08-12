@@ -99,7 +99,7 @@ namespace Gamekit2D
         protected readonly int m_HashDeathPara = Animator.StringToHash("Death");
         protected readonly int m_HashGroundedPara = Animator.StringToHash("Grounded");
 
-        private void Awake()
+        protected virtual void Awake()
         {
             Debug.LogWarning("EYE ON Awake");
             m_CharacterController2D = GetComponent<CharacterController2D>();
@@ -129,7 +129,7 @@ namespace Gamekit2D
             m_Collider.enabled = true;
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             SceneLinkedSMB<EnemyBehaviour>.Initialise(m_Animator, this);
 
@@ -400,7 +400,7 @@ namespace Gamekit2D
 
             BulletObject obj = m_BulletPool.Pop(shootingOrigin.TransformPoint(shootPosition));
 
-            shootingAudio.PlayRandomSound();
+            //shootingAudio.PlayRandomSound();
 
             obj.rigidbody2D.velocity = (GetProjectilVelocity(m_TargetShootPosition, shootingOrigin.transform.position));
         }

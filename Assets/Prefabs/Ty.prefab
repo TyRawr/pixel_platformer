@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4008662087484526}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4847760153502372}
   - component: {fileID: 212959696685305478}
   - component: {fileID: 114260186495220858}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114209832220352348}
   - component: {fileID: 114339846675902494}
   - component: {fileID: 114602465505387544}
+  - component: {fileID: 114995424993257178}
   m_Layer: 10
   m_Name: Ty
   m_TagString: Untagged
@@ -273,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 212760095189901626}
-  damageable: {fileID: 0}
+  damageable: {fileID: 114995424993257178}
   meleeDamager: {fileID: 0}
   arm: {fileID: 4847760153502372}
   facingLeftBulletSpawnPoint: {fileID: 4008662087484526}
@@ -290,7 +291,7 @@ MonoBehaviour:
   jumpSpeed: 13
   jumpAbortSpeedReduction: 100
   hurtJumpAngle: 45
-  hurtJumpSpeed: 5
+  hurtJumpSpeed: 1
   flickeringDuration: 0.1
   meleeAttackDashSpeed: 5
   dashWhileAirborne: 0
@@ -300,10 +301,10 @@ MonoBehaviour:
   rightBulletSpawnPointAnimated: 1
   cameraHorizontalFacingOffset: 2
   cameraHorizontalSpeedOffset: 0.2
-  cameraVerticalInputOffset: 0.2
+  cameraVerticalInputOffset: 0
   maxHorizontalDeltaDampTime: 0.4
-  maxVerticalDeltaDampTime: 0.23
-  verticalCameraOffsetDelay: 1
+  maxVerticalDeltaDampTime: 0
+  verticalCameraOffsetDelay: 0
   spriteOriginallyFacesLeft: 0
 --- !u!114 &114872413300289654
 MonoBehaviour:
@@ -362,6 +363,67 @@ MonoBehaviour:
     controllerAxis: 2
   dataSettings:
     dataTag: 76a1629a-3152-4e44-a944-ba6ff1ac96cc
+    persistenceType: 3
+--- !u!114 &114995424993257178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715966259617150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960138f0450083543ad1d17e1352019d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  invulnerableAfterDamage: 1
+  invulnerabilityDuration: 3
+  disableOnDeath: 0
+  centreOffset: {x: 0, y: 1}
+  OnHealthSet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gamekit2D.Damageable+HealthEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114729640121970364}
+        m_MethodName: OnHurt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Gamekit2D.Damageable+DamageEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114729640121970364}
+        m_MethodName: OnDie
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Gamekit2D.Damageable+DamageEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnGainHealth:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Gamekit2D.Damageable+HealEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dataSettings:
+    dataTag: 14d26079-07db-4ac6-94cf-fab1f59f27bb
     persistenceType: 3
 --- !u!212 &212450221010493588
 SpriteRenderer:
@@ -424,7 +486,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 272ba847f100d4251bb8260575189042, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -30,7 +30,7 @@ namespace Gamekit2D
             m_SpriteRenderer = GetComponent<SpriteRenderer>();
             m_Timer = 0.0f;
             mainCamera = Object.FindObjectOfType<Camera>();
-            Debug.Log("spriteOriginallyFacesLeft " + spriteOriginallyFacesLeft);
+            //Debug.Log("spriteOriginallyFacesLeft " + spriteOriginallyFacesLeft);
         }
 
         public void ReturnToPool ()
@@ -48,7 +48,15 @@ namespace Gamekit2D
                                 screenPoint.y < 1 + k_OffScreenError;
 
                 if (!onScreen)
-                    bulletPoolObject.ReturnToPool();
+                    if(bulletPoolObject != null)
+                    {
+                        bulletPoolObject.ReturnToPool();
+                    } else
+                    {
+                        GameObject.Destroy(gameObject);
+                        return;
+                    }
+                    
             }
 
             if (timeBeforeAutodestruct > 0)

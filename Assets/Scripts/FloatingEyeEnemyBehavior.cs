@@ -22,7 +22,7 @@ namespace Gamekit2D
             //m_Animator.SetBool(m_HashGroundedPara, m_CharacterController2D.IsGrounded);
         }
 
-        public virtual void UpdateTimers()
+        public override void UpdateTimers()
         {
             if (m_TimeSinceLastTargetView > 0.0f)
                 m_TimeSinceLastTargetView -= Time.deltaTime;
@@ -86,7 +86,7 @@ namespace Gamekit2D
             //Debug.DrawLine(castingPosition, castingPosition + forwardDistance * (m_LocalBounds.extents.x + 0.4f));
              
             float radius = .2f;
-            Debug.Log(transform.forward);
+            //Debug.Log(transform.forward);
             RaycastHit2D[] hits = Physics2D.CircleCastAll((Vector2)(castingPosition), radius, new Vector2(1, 1), forwardDistance, m_CharacterController2D.groundedLayerMask.value);
             for(int i = 0; i < hits.Length; i++)
             {

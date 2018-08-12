@@ -91,7 +91,7 @@ namespace Gamekit2D
         protected float m_VerticalCameraOffsetTimer;
         //protected InventoryController m_InventoryController;
 
-        //protected Checkpoint m_LastCheckpoint = null;
+        protected Checkpoint m_LastCheckpoint = null;
         protected Vector2 m_StartingPosition = Vector2.zero;
         protected bool m_StartingFacingLeft = false;
 
@@ -651,12 +651,12 @@ namespace Gamekit2D
 
         public void EnableInvulnerability()
         {
-           // damageable.EnableInvulnerability();
+            damageable.EnableInvulnerability();
         }
 
         public void DisableInvulnerability()
         {
-           // damageable.DisableInvulnerability();
+            damageable.DisableInvulnerability();
         }
 
         
@@ -675,6 +675,7 @@ namespace Gamekit2D
         public void OnHurt(Damager damager, Damageable damageable)
         {
             //if the player don't have control, we shouldn't be able to be hurt as this wouldn't be fair
+            Debug.Log(gameObject.name + " HURT");
             if (!PlayerInput.Instance.HaveControl)
                 return;
 
@@ -699,6 +700,7 @@ namespace Gamekit2D
 
         public void OnDie()
         {
+            Debug.Log("On Die");
             m_Animator.SetTrigger(m_HashDeadPara);
 
             StartCoroutine(DieRespawnCoroutine(true, false));
@@ -708,6 +710,7 @@ namespace Gamekit2D
         {
             PlayerInput.Instance.ReleaseControl(true);
             yield return new WaitForSeconds(1.0f); //wait one second before respawing
+            Respawn(resetHealth, useCheckPoint);
             /*
             yield return StartCoroutine(ScreenFader.FadeSceneOut(useCheckPoint ? ScreenFader.FadeType.Black : ScreenFader.FadeType.GameOver));
             if(!useCheckPoint)
@@ -758,10 +761,10 @@ namespace Gamekit2D
             Vector2 colliderBottom = m_CharacterController2D.Rigidbody2D.position + m_Capsule.offset + Vector2.down * m_Capsule.size.y * 0.5f;
             m_CharacterController2D.Teleport(colliderBottom);
         }
-        /*
+        
         public void PlayFootstep()
         {
-            footstepAudioPlayer.PlayRandomSound(m_CurrentSurface);
+            //footstepAudioPlayer.PlayRandomSound(m_CurrentSurface);
             var footstepPosition = transform.position;
             footstepPosition.z -= 1;
             VFXController.Instance.Trigger("DustPuff", footstepPosition, 0, false, null, m_CurrentSurface);
@@ -792,7 +795,7 @@ namespace Gamekit2D
                 GameObjectTeleporter.Teleport(gameObject, m_StartingPosition);
             }
         }
-
+        
         public void SetChekpoint(Checkpoint checkpoint)
         {
             m_LastCheckpoint = checkpoint;
@@ -801,8 +804,8 @@ namespace Gamekit2D
         //This is called by the inventory controller on key grab, so it can update the Key UI.
         public void KeyInventoryEvent()
         {
-            if (KeyUI.Instance != null) KeyUI.Instance.ChangeKeyUI(m_InventoryController);
+            //if (KeyUI.Instance != null) KeyUI.Instance.ChangeKeyUI(m_InventoryController);
         }
-        */
+        
     }
 }
