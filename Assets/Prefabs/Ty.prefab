@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4008662087484526}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,6 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4697284591593648}
+  - component: {fileID: 212450221010493588}
   m_Layer: 0
   m_Name: Camera Follow Target
   m_TagString: Untagged
@@ -51,7 +52,7 @@ GameObject:
   - component: {fileID: 4847760153502372}
   - component: {fileID: 212959696685305478}
   - component: {fileID: 114260186495220858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715966259617150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.99, y: -1.41, z: 0}
+  m_LocalPosition: {x: -6.65, y: -4.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4697284591593648}
@@ -279,14 +280,14 @@ MonoBehaviour:
   facingRightBulletSpawnPoint: {fileID: 4008662087484526}
   bulletPool: {fileID: 114339846675902494}
   cameraFollowTarget: {fileID: 4697284591593648}
-  maxSpeed: 7
+  maxSpeed: 6
   groundAcceleration: 100
   groundDeceleration: 100
   pushingSpeedProportion: 0.482
   airborneAccelProportion: 1
-  airborneDecelProportion: 0.6
-  gravity: 100
-  jumpSpeed: 20
+  airborneDecelProportion: 1
+  gravity: 30
+  jumpSpeed: 13
   jumpAbortSpeedReduction: 100
   hurtJumpAngle: 45
   hurtJumpSpeed: 5
@@ -299,9 +300,9 @@ MonoBehaviour:
   rightBulletSpawnPointAnimated: 1
   cameraHorizontalFacingOffset: 2
   cameraHorizontalSpeedOffset: 0.2
-  cameraVerticalInputOffset: 2
+  cameraVerticalInputOffset: 0.2
   maxHorizontalDeltaDampTime: 0.4
-  maxVerticalDeltaDampTime: 0.6
+  maxVerticalDeltaDampTime: 0.23
   verticalCameraOffsetDelay: 1
   spriteOriginallyFacesLeft: 0
 --- !u!114 &114872413300289654
@@ -362,6 +363,52 @@ MonoBehaviour:
   dataSettings:
     dataTag: 76a1629a-3152-4e44-a944-ba6ff1ac96cc
     persistenceType: 3
+--- !u!212 &212450221010493588
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472206904299986}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!212 &212760095189901626
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -377,7 +424,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e32663775798df04188fe4af9f6994a4, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -423,7 +470,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e32663775798df04188fe4af9f6994a4, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
