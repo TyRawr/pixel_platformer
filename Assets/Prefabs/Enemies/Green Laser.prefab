@@ -177,10 +177,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2.81, y: 0.6875}
+  m_Size: {x: 3.36, y: 0.11}
   m_AdaptiveModeThreshold: 0.072
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!212 &212435830022374528
