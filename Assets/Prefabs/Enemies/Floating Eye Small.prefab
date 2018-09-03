@@ -41,8 +41,6 @@ GameObject:
   - component: {fileID: 114415664640662774}
   - component: {fileID: 114202550005955382}
   - component: {fileID: 95120767120548018}
-  - component: {fileID: 70755720811403960}
-  - component: {fileID: 61257755778931504}
   - component: {fileID: 114749585595591388}
   m_Layer: 13
   m_Name: Floating Eye Small
@@ -71,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813891354677432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 4.12, z: 0}
+  m_LocalPosition: {x: -1.74, y: -3.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4002566756310216}
@@ -113,46 +111,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.28
---- !u!61 &61257755778931504
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813891354677432}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
---- !u!70 &70755720811403960
-CapsuleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813891354677432}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
-  m_Direction: 0
 --- !u!95 &95120767120548018
 Animator:
   serializedVersion: 3
@@ -197,10 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960138f0450083543ad1d17e1352019d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 3
   invulnerableAfterDamage: 1
   invulnerabilityDuration: 0.2
-  disableOnDeath: 1
+  disableOnDeath: 0
   centreOffset: {x: 0, y: 1}
   OnHealthSet:
     m_PersistentCalls:
@@ -225,7 +183,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   OnDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114749585595591388}
+        m_MethodName: Die
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Gamekit2D.Damageable+DamageEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnGainHealth:
@@ -281,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteFaceLeft: 1
-  speed: 2
+  speed: 0
   gravity: 0
   projectilePrefab: {fileID: 0}
   viewDirection: 0
@@ -302,6 +271,8 @@ MonoBehaviour:
   dieAudio: {fileID: 0}
   footStepAudio: {fileID: 0}
   flickeringDuration: 1
+  bloodSplatter: {fileID: 1098157874518288, guid: 27b80bb74bbdb2741b8b2cbf22b5f2ea,
+    type: 2}
 --- !u!212 &212533876213970740
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -336,7 +307,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 0e0839d5ba36c734b94bf4e7daa27af3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

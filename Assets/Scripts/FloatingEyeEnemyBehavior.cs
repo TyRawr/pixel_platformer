@@ -12,7 +12,9 @@ namespace Gamekit2D
         private void FixedUpdate()
         {
             if (m_Dead)
+            {
                 return;
+            }
             m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
             //m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, -gravity);
             //Debug.Log("EYE Move " + m_MoveVector);

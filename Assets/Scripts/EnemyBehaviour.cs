@@ -63,7 +63,9 @@ namespace Gamekit2D
         [Header("Misc")]
         [Tooltip("Time in seconds during which the enemy flicker after being hit")]
         public float flickeringDuration;
+        public GameObject bloodSplatter;
 
+        protected GameObject bloodSplatterParent;
         protected SpriteRenderer m_SpriteRenderer;
         protected CharacterController2D m_CharacterController2D;
         protected Collider2D m_Collider;
@@ -131,6 +133,12 @@ namespace Gamekit2D
 
         protected virtual void Start()
         {
+            bloodSplatterParent = GameObject.Find("ParticlesParent") as GameObject;
+            bloodSplatter = GameObject.Instantiate(bloodSplatter);
+            bloodSplatter.transform.SetParent(transform);
+            bloodSplatter.transform.localPosition = Vector3.zero;
+            bloodSplatter.SetActive(false);
+
             SceneLinkedSMB<EnemyBehaviour>.Initialise(m_Animator, this);
 
             m_LocalBounds = new Bounds();
@@ -470,12 +478,12 @@ namespace Gamekit2D
             Vector2 throwVector = new Vector2(0, 2.0f);
             Vector2 damagerToThis = damager.transform.position - transform.position;
         
-            throwVector.x = Mathf.Sign(damagerToThis.x) * -4.0f;
-            SetMoveVector(throwVector);
+            //throwVector.x = Mathf.Sign(damagerToThis.x) * -4.0f;
+            //SetMoveVector(throwVector);
 
             m_Animator.SetTrigger(m_HashDeathPara);
 
-            dieAudio.PlayRandomSound();
+            //dieAudio.PlayRandomSound();
 
             m_Dead = true;
             m_Collider.enabled = false;
@@ -541,6 +549,12 @@ namespace Gamekit2D
                 meleeDamager.DisableDamage ();
             if(contactDamager != null)
                 contactDamager.DisableDamage ();
+        }
+
+        public void SpawnBloodSplatter()
+        {
+            bloodSplatter.SetActive(true);
+            bloodSplatter.transform.SetParent(bloodSplatterParent.transform);
         }
 
         public void PlayFootStep()

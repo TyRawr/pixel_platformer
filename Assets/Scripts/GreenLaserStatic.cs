@@ -78,7 +78,7 @@ public class GreenLaserStatic : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        middleSpriteRenderer.size = new Vector2(widthOfGreenLaser - 1f, 0.55f); //0.55 is a hard coded value that matches the green line rather than the whole container for the laser
+        middleSpriteRenderer.size = new Vector2(widthOfGreenLaser - 1f, 0.6875f); //0.6875f is a hard coded value that matches the green line rather than the whole container for the laser
 
         if (Input.GetKeyDown(KeyCode.C))
         {
